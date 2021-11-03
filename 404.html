@@ -6,19 +6,21 @@
   </style>
   <link rel="icon" type="image/x-icon" href="media/favicon404.ico">
     <script type="text/javascript">
-      var source = "media/clownMusic.mp3"
+      var source = "media/clownMusic.mp3";
       var audio = document.createElement("audio");
       var promise; 
       audio.autoplay = true;
-      audio.load()
+      audio.loop = true;
+      audio.muted = true;
+      audio.load();
       audio.src = source;
       function play_clown_music(){
-       promise = audio.play() 
+       promise = audio.play();
        if (promise !== undefined) {
          promise.then(_ => {
-           // all good
+           audio.muted = false;
          }).catch(error => {
-           setTimeout(function(){ play_clown_music(); }, 1000);
+           play_clown_music();
          });
        }
       }
