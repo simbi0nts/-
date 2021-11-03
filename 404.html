@@ -10,10 +10,14 @@
       var audio = document.createElement("audio");
       audio.autoplay = true;
       audio.load()
-      audio.addEventListener("load", function() { 
-          audio.play(); 
-      }, true);
       audio.src = source;
+      function play_clown_music(){
+        if (audio.paused) {
+         audio.play()
+         setTimeout(function(){ play_clown_music(); }, 1000);
+        }
+      }
+      play_clown_music()
   </script>
   <title>IMPOSTER IS 404</title>
  </head>
