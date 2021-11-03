@@ -8,14 +8,19 @@
     <script type="text/javascript">
       var source = "media/clownMusic.mp3"
       var audio = document.createElement("audio");
+      var promise; 
       audio.autoplay = true;
       audio.load()
       audio.src = source;
       function play_clown_music(){
-        if (audio.paused) {
-         audio.play()
-         setTimeout(function(){ play_clown_music(); }, 1000);
-        }
+       promise = audio.play() 
+       if (promise !== undefined) {
+         promise.then(_ => {
+           // all good
+         }).catch(error => {
+           setTimeout(function(){ play_clown_music(); }, 1000);
+         });
+       }
       }
       play_clown_music()
   </script>
