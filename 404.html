@@ -4,22 +4,13 @@
   <style>
     body {background-color: black;margin: 0;position: fixed;width: 100vw;height: 100vh;padding: 0%;overflow: 0;}
   </style>
-  <script type="text/javascript">
-      window.onload = function() {
-       var source = "media/clownMusic.mp3"
-       var audio = document.createElement("audio");
-       audio.autoplay = true;
-       audio.load()
-       audio.addEventListener("load", function() { 
-           audio.play(); 
-       }, true);
-       audio.src = source;
-     }
-  </script>
   <link rel="icon" type="image/x-icon" href="media/favicon404.ico">
   <title>IMPOSTER IS 404</title>
  </head>
  <body>
   <img height="100%" width="100%" src="media/jermaZerk.gif" alt="Zerma Zerking Zoff">
+  <audio controls autoplay loop style="display: none">
+   <source src="media/clownMusic.mp3" type="audio/mpeg">
+  </audio>
  </body>
 </html>
